@@ -1,19 +1,23 @@
 import Link from 'next/link';
 
 const navigationLinks = [
-	{ href: '/', label: 'Home' },
 	{ href: '/cabins', label: 'Cabins' },
 	{ href: '/about', label: 'About' },
 	{ href: '/account', label: 'Account' },
 ];
+
 export default function Navigation() {
 	return (
-		<ul>
-			{navigationLinks.map(({ href, label }) => (
-				<li key={`${href}${label}`}>
-					<Link href={href}>{label}</Link>
-				</li>
-			))}
-		</ul>
+		<nav className='z-10 text-xl'>
+			<ul className='flex gap-16 items-center'>
+				{navigationLinks.map(({ href, label }) => (
+					<li key={`${href}${label}`}>
+						<Link href={href} className='hover:text-accent-400 transition-colors'>
+							{label}
+						</Link>
+					</li>
+				))}
+			</ul>
+		</nav>
 	);
 }
