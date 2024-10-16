@@ -1,26 +1,18 @@
 import localFont from 'next/font/local';
 import Navigation from './_components/Navigation';
-
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 900',
-});
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
-	weight: '100 900',
-});
+import '@/app/_styles/globals.css';
+import Logo from './_components/Logo';
 
 export const metadata = {
-	title: 'the nature cabins',
+	title: 'the Natures Cabins',
 	description: 'Your next destination where you can relax and revive.',
 };
 
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+			<body className='bg-primary-950 text-primary-100 min-h-screen'>
+				<Logo />
 				<Navigation />
 				{children}
 			</body>
