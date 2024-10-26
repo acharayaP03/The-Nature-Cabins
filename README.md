@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **The Nature's cabin**
 
-## Getting Started
+This is a fictitious project built with **Next.js 14**, **Supabase**, and **Tailwind CSS**, focusing on **SEO** and **performance optimization**. The project also integrates **NextAuth.js** to manage authentication, including a **guest area**.
 
-First, run the development server:
+This also contains user dashboard called `mycabins` where The Nature's Cabin user can manage booking, checking and whole other hotel management stuff.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Table of Contents**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [Project Structure](#project-structure)
+- [Authentication with NextAuth.js](#authentication-with-nextauthjs)
+- [Performance Optimizations](#performance-optimizations)
+- [SEO Optimization](#seo-optimization)
+- [Scripts](#scripts)
+- [License](#license)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## **Features**
 
-## Learn More
+- **Next.js 14**: App Router for modern routing and optimized rendering.
+- **Supabase**: Backend-as-a-service for database, authentication, and APIs.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **NextAuth.js**: Authentication for users and a **guest area**.
+- **SEO-Optimized**: Includes meta tags, sitemap generation, and structured data.
+- **Performance Optimization**: Code splitting, image optimization, and lazy loading.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## **Technologies Used**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Next.js 14** (App Router)
+- **Supabase** (Authentication & Database)
+- **NextAuth.js** (User authentication with guest area)
+- **Tailwind CSS** (For styling)
+- **React 18**
+- **ESLint & Prettier** (For code quality)
+- **Vitest** (For testing)
+- **JSDOM** (For browser environment in tests)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## **Getting Started**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### **Prerequisites**
+
+Ensure you have the following installed:
+
+- **Node.js** (>= 18.x)
+- **npm** or **yarn**
