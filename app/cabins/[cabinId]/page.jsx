@@ -13,16 +13,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
 	console.log(params);
-	//{id, created_at, name, max_capacity, regular_price, discount, description, image}
-	const {
-		id,
-		name,
-		max_capacity: maxCapacity,
-		regular_price: regularPrice,
-		discount,
-		description,
-		image,
-	} = await getCabin(params.cabinId);
+	const { name, max_capacity: maxCapacity, description, image } = await getCabin(params.cabinId);
 
 	return (
 		<div className='max-w-6xl mx-auto mt-8'>
