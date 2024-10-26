@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import backgroundImage from '@/public/bg.png';
-export default async function Home() {
+import backgroundImage from '../public/bg.png';
+
+export default async function Page() {
 	return (
 		<main className='mt-24'>
 			<Image
