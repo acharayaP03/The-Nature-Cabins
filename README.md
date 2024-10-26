@@ -4,6 +4,9 @@ This is a fictitious project built with **Next.js 14**, **Supabase**, and **Tail
 
 This also contains user dashboard called `mycabins` where The Nature's Cabin user can manage booking, checking and whole other hotel management stuff.
 
+<img width="1657" alt="Screenshot 2024-10-26 at 7 04 00 PM" src="https://github.com/user-attachments/assets/50a47cc2-0958-42d5-8e05-fcf87ad4a270">
+
+
 ## **Table of Contents**
 
 - [Features](#features)
