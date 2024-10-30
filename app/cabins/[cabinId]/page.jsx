@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { getCabin, getCabins } from '@/app/_lib/data-service';
 import TextExpander from '@/app/_components/cabins/TextExpander';
 
-export const revalidate = 3600; // revalidate data cache every hour
 // generate dynamic metadata
 export async function generateMetadata({ params }) {
 	const cabin = await getCabin(params.cabinId);
