@@ -1,7 +1,7 @@
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { getCabin, getCabins } from '@/app/_lib/data-service';
-import TextExpander from '@/app/_components/cabins/TextExpander';
+import { DateSelector, ReservationForm, TextExpander } from '@/app/_components/cabins';
 
 // generate dynamic metadata
 export async function generateMetadata({ params }) {
@@ -22,11 +22,10 @@ export async function generateStaticParams() {
 	return cabins.map((cabin) => ({ cabinId: String(cabin.id) }));
 }
 export default async function Page({ params }) {
-	console.log(params);
 	const { name, max_capacity: maxCapacity, description, image } = await getCabin(params.cabinId);
 
 	return (
-		<div className='max-w-6xl mx-auto mt-8'>
+		<div className=' mx-auto mt-8'>
 			<div className='grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24'>
 				<div className='relative scale-[1.15] -translate-x-3'>
 					<Image fill className='object-cover' src={image} alt={`Cabin ${name}`} />
@@ -65,7 +64,13 @@ export default async function Page({ params }) {
 			</div>
 
 			<div>
-				<h2 className='text-5xl font-semibold text-center'>Reserve today. Pay on arrival.</h2>
+				<h2 className='text-5xl font-semibold text-center text-accent-400 mb-10'>
+					Reserve {name} today. Pay on arrival.
+				</h2>
+				<div className='grid grid-cols-2 border border-primary-800 min-h-[px] '>
+					<DateSelector />
+					<ReservationForm />
+				</div>
 			</div>
 		</div>
 	);
