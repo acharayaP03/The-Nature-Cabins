@@ -32,8 +32,13 @@
 
 /* For data picker */
 .rdp-root {
-	--rdp-cell-size: 20px !important;
-	--rdp-day_button-width: 20px !important;
+	--rdp-font-family: inherit !important;
+	--rdp-day-width: 32px !important;
 	--rdp-accent-color: theme('colors.accent.500') !important;
 	--rdp-background-color: theme('colors.accent.600') !important;
+
+	/* center day picker navigation.*/
+	.rdp-month_caption {
+		justify-content: center!important;
+	}
 }
