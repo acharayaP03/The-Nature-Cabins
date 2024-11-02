@@ -1,7 +1,9 @@
-import { EyeSlashIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import { getCabin, getCabins } from '@/app/_lib/data-service';
-import { DateSelector, ReservationForm, TextExpander } from '@/app/_components/cabins';
+import { EyeSlashIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/solid';
+import {getBookedDatesByCabinId, getCabin, getCabins, getSettings} from '@/app/_lib/data-service';
+import { DateSelector, ReservationForm, TextExpander, Reservation } from '@/app/_components/cabins';
+
+
 
 // generate dynamic metadata
 export async function generateMetadata({ params }) {
@@ -22,7 +24,9 @@ export async function generateStaticParams() {
 	return cabins.map((cabin) => ({ cabinId: String(cabin.id) }));
 }
 export default async function Page({ params }) {
-	const { name, max_capacity: maxCapacity, description, image } = await getCabin(params.cabinId);
+
+	const cabin = await getCabin(params.cabinId);
+	const { name, max_capacity: maxCapacity, description, image } = cabin;
 
 	return (
 		<div className=' mx-auto mt-8'>
@@ -67,10 +71,7 @@ export default async function Page({ params }) {
 				<h2 className='text-5xl font-semibold text-center text-accent-400 mb-10'>
 					Reserve {name} today. Pay on arrival.
 				</h2>
-				<div className='grid grid-cols-2 border border-primary-800 min-h-[px] '>
-					<DateSelector />
-					<ReservationForm />
-				</div>
+				<Reservation cabin={cabin}/>
 			</div>
 		</div>
 	);
