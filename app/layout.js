@@ -2,6 +2,8 @@ import { Josefin_Sans } from 'next/font/google';
 import Header from '@/app/_components/Header';
 import '@/app/_styles/globals.css';
 
+import { ReservationProvider} from "@/app/_components/cabins/ReservationContext.js";
+
 const josefin = Josefin_Sans({
 	subsets: ['latin'],
 	display: 'swap',
@@ -23,7 +25,13 @@ export default function RootLayout({ children }) {
 			>
 				<Header />
 				<div className='flex-1 px-8 py-12 grid'>
-					<main className='max-w-7xl mx-auto w-full'>{children}</main>
+					<main className='max-w-7xl mx-auto w-full'>
+						{/* we are passing server component which is children and its a page component which are already generated*/}
+						{/* we are wrapping the children with ReservationProvider so that we can use the context in the children that needs a reactivity */}
+						<ReservationProvider>
+							{children}
+						</ReservationProvider>
+					</main>
 				</div>
 			</body>
 		</html>
