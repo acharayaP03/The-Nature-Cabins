@@ -1,4 +1,6 @@
-function ReservationForm({ cabin}) {
+'use client';
+
+export default function ReservationForm({ cabin}) {
   const { max_capacity: maxCapacity } = cabin;
 
   return (
@@ -62,4 +64,3 @@ function ReservationForm({ cabin}) {
   );
 }
 
-export default ReservationForm;
