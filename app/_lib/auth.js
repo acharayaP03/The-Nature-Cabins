@@ -8,6 +8,13 @@ const authConfig = {
 			clientSecret: process.env.AUTH_GOOGLE_SECRET,
 		}),
 	],
+	// call back to check if user is authorized, this is necessary if you want to protect some routes
+	// which in our case '/account'
+	callbacks: {
+		authorized({ auth, request }) {
+			return !!auth?.user;
+		},
+	},
 };
 
 export const {

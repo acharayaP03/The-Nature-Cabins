@@ -35,6 +35,7 @@
 	--rdp-font-family: inherit !important;
 	--rdp-day-width: 32px !important;
 	--rdp-day-height: 32px !important;
+	--rdp-months-gap: 1.2rem !important;
 	--rdp-range_middle-background-color: theme('colors.accent.500') !important;
 	--rdp-day_button-height: 24px;
 	--rdp-accent-color: theme('colors.accent.500') !important;
@@ -42,6 +43,6 @@
 
 	/* center day picker navigation.*/
 	.rdp-month_caption {
-		justify-content: center!important;
+		justify-content: center !important;
 	}
 }
