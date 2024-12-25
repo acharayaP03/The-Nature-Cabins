@@ -1,7 +1,7 @@
 "use client";
 
 import { updateGuestProfile } from "@/app/_lib/guest.actions";
-import { DefaultButton } from "@/app/_sharedUI/DefaultButton";
+import { FormStatusButton } from "@/app/_sharedUI/FormStatusButton";
 import FormInput from "@/app/_sharedUI/FormInput";
 
 export default function UpdateProfileForm({ guest, children }) {
@@ -59,7 +59,7 @@ export default function UpdateProfileForm({ guest, children }) {
       </div>
 
       <div className="flex items-center justify-end gap-6">
-        <DefaultButton label="Update profile" />
+        <FormStatusButton label="Update profile" />
       </div>
     </form>
   );
