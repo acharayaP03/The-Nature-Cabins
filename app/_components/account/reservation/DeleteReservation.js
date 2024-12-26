@@ -7,6 +7,7 @@
  * the component can be interactive.
  */
 import { TrashIcon } from "@heroicons/react/24/solid";
+import { deleteReservation } from "@/app/_lib/guest.actions";
 
 export default function DeleteReservation({ bookingId }) {
   return (
