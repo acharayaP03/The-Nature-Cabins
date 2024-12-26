@@ -36,3 +36,26 @@ export async function updateGuestProfile(formData) {
   // revalidate cache after updating the guest profile
   revalidatePath("/account/profile");
 }
+
+/**
+ * @description Delete a reservation
+ */
+
+export async function deleteReservation(bookingId) {
+  // Ensure the user is authenticated
+  const session = await auth();
+  if (!session) errorHandler("You must be logged in to delete a reservation.");
+
+  const { data, error } = await supabase
+    .from("bookings")
+    .delete()
+    .eq("id", bookingId);
+
+  if (error) {
+    console.error(error);
+    errorHandler("Reservation could not be deleted");
+  }
+
+  // revalidate cache after deleting the reservation
+  revalidatePath("/account/reservations");
+}
