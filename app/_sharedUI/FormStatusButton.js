@@ -1,3 +1,4 @@
+"use client";
 import { useFormStatus } from "react-dom";
 
 export function FormStatusButton({ label }) {
